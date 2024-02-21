@@ -21,7 +21,9 @@ public class UserService {
         var user = new AppUser();
         user.setEmail(request.getEmail());
         user.setPassword(passwordEncoder.encode(request.getPassword()));
+//        TODO:
         user.setAuthority("ROLE_USER"); // Assign a default authority
+        // Do we need any additional work here
         userRepository.save(user);
         return true;
     }
